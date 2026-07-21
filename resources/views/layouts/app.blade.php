@@ -13,8 +13,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <!-- Custom Redesign Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/parna-redesign.css') }}">
+    <!-- Core Modular Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     
     @yield('styles')
 </head>

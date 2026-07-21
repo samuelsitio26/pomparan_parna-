@@ -2,6 +2,10 @@
 
 @section('title', 'Berita & Kegiatan – Parsadaan Pomparan Ni Raja Nai Ambaton')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/pages/berita.css') }}">
+@endsection
+
 @section('content')
 <!-- Subpage Banner Hero -->
 <section class="subpage-banner">

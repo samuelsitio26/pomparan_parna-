@@ -1,0 +1,34 @@
+/* ==========================================================================
+   DESIGN TOKENS & CSS VARIABLES
+   ========================================================================== */
+
+:root {
+    --parna-maroon: #4A1515;
+    --parna-maroon-hover: #5D1A1A;
+    --parna-maroon-dark: #330B0B;
+    --parna-maroon-light: #7A2424;
+    
+    --parna-gold: #C59B27;
+    --parna-gold-light: #F9F3E5;
+    --parna-gold-border: #E8D8B5;
+    
+    --parna-bg: #FAF6F0;
+    --parna-bg-alt: #F4ECE1;
+    --parna-card: #FFFFFF;
+    --parna-border: #EFE6DC;
+    
+    --parna-text-main: #2D231F;
+    --parna-text-muted: #786B60;
+    
+    --parna-shadow-sm: 0 2px 8px rgba(74, 21, 21, 0.05);
+    --parna-shadow-md: 0 4px 20px rgba(74, 21, 21, 0.08);
+    --parna-shadow-lg: 0 10px 30px rgba(74, 21, 21, 0.12);
+    
+    --parna-radius-sm: 8px;
+    --parna-radius-md: 12px;
+    --parna-radius-lg: 18px;
+    --parna-radius-pill: 50px;
+    
+    --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}

@@ -2,6 +2,10 @@
 
 @section('title', 'Tentang Parna – Parsadaan Pomparan Ni Raja Nai Ambaton')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/pages/tentang.css') }}">
+@endsection
+
 @section('content')
 <!-- Subpage Banner Hero -->
 <section class="subpage-banner">

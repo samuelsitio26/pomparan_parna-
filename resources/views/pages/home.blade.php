@@ -2,6 +2,10 @@
 
 @section('title', 'Beranda – PARNA Parsadaan Pomparan Ni Raja Nai Ambaton')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+@endsection
+
 @section('content')
 <!-- Hero Section Home -->
 <section class="home-hero">

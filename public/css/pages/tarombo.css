@@ -1,0 +1,152 @@
+/* ==========================================================================
+   TAROMBO (SILSILAH TREE) PAGE STYLES
+   ========================================================================== */
+
+.tarombo-tree-wrapper {
+    background: #FFFFFF;
+    border: 1px solid var(--parna-border);
+    border-radius: var(--parna-radius-md);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--parna-shadow-sm);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.tarombo-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--parna-text-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+}
+.legend-color.main { background-color: var(--parna-maroon); }
+.legend-color.second { background-color: #D4A359; }
+.legend-color.branch { background-color: #4A8C80; }
+
+.tree-root-box {
+    background: var(--parna-maroon);
+    color: #FFFFFF;
+    border-radius: var(--parna-radius-sm);
+    padding: 12px 24px;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto 1.8rem auto;
+    box-shadow: 0 4px 15px rgba(74, 21, 21, 0.25);
+    border: 2px solid var(--parna-gold);
+}
+.tree-root-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.tree-root-box p {
+    font-size: 0.78rem;
+    color: var(--parna-gold-light);
+}
+
+.tree-level-1 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.tree-node-sm {
+    background: #FAF8F5;
+    border: 1.5px solid #D9CBB9;
+    border-radius: var(--parna-radius-sm);
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--parna-maroon);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.tree-vertical-connector {
+    width: 2px;
+    height: 30px;
+    background-color: var(--parna-gold);
+    margin: 0 auto 1.5rem auto;
+}
+
+.tree-middle-chain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.tree-node-mid {
+    background: #FFFBF3;
+    border: 1.5px solid var(--parna-gold);
+    border-radius: var(--parna-radius-sm);
+    padding: 8px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--parna-maroon-dark);
+}
+
+.tree-branches-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.branch-card {
+    background: #FFFFFF;
+    border: 1.5px solid #4A8C80;
+    border-radius: var(--parna-radius-sm);
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.branch-card h5 {
+    background-color: #EBF5F3;
+    color: #2D6359;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.branch-card ul {
+    list-style: none;
+    font-size: 0.75rem;
+    color: var(--parna-text-main);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.branch-card ul li::before {
+    content: "• ";
+    color: #4A8C80;
+    font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+    .tree-level-1, .tree-branches-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

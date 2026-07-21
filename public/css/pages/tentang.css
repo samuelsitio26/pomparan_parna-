@@ -1,0 +1,49 @@
+/* ==========================================================================
+   TENTANG PARNA PAGE STYLES
+   ========================================================================== */
+
+.tentang-content-box {
+    background: #FFFFFF;
+    border: 1px solid var(--parna-border);
+    border-radius: var(--parna-radius-md);
+    padding: 2rem;
+    box-shadow: var(--parna-shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.tentang-content-box p {
+    font-size: 0.95rem;
+    color: var(--parna-text-main);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.vm-card {
+    background: #FAF6F0;
+    border: 1px solid var(--parna-gold-border);
+    border-radius: var(--parna-radius-md);
+    padding: 1.5rem;
+}
+
+.vm-card h4 {
+    font-family: var(--font-heading);
+    color: var(--parna-maroon);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 768px) {
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+    }
+}

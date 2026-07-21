@@ -2,6 +2,10 @@
 
 @section('title', 'Tarombo Parna – Silsilah Keturunan Raja Nai Ambaton')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/pages/tarombo.css') }}">
+@endsection
+
 @section('content')
 <!-- Subpage Banner Hero -->
 <section class="subpage-banner">

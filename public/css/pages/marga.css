@@ -1,0 +1,101 @@
+/* ==========================================================================
+   MARGA DIRECTORY PAGE STYLES
+   ========================================================================== */
+
+.marga-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-input-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.search-input-wrap input {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    border: 1px solid var(--parna-border);
+    border-radius: var(--parna-radius-pill);
+    background-color: #FFFFFF;
+    font-size: 0.88rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.search-input-wrap input:focus {
+    border-color: var(--parna-maroon);
+    box-shadow: 0 0 0 3px rgba(74, 21, 21, 0.1);
+}
+
+.search-input-wrap i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--parna-text-muted);
+}
+
+.sort-select {
+    padding: 10px 20px;
+    border: 1px solid var(--parna-border);
+    border-radius: var(--parna-radius-pill);
+    background-color: var(--parna-maroon);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.marga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.marga-card {
+    background: #FFFFFF;
+    border: 1px solid var(--parna-border);
+    border-radius: var(--parna-radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.25s ease;
+    box-shadow: var(--parna-shadow-sm);
+}
+
+.marga-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--parna-shadow-md);
+    border-color: var(--parna-gold-border);
+}
+
+.marga-card-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #F8EFE7;
+    color: var(--parna-maroon);
+    border-radius: var(--parna-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.marga-card-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--parna-maroon);
+    margin-bottom: 2px;
+}
+
+.marga-card-info p {
+    font-size: 0.75rem;
+    color: var(--parna-text-muted);
+}
