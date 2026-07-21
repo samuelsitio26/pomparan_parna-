@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar Marga Parna – Parsadaan Pomparan Ni Raja Nai Ambaton')
+@section('title', 'Marga Parna – Parsadaan Pomparan Ni Raja Nai Ambaton')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/pages/marga.css') }}">
@@ -8,72 +8,202 @@
 
 @section('content')
 <!-- Subpage Banner Hero -->
-<section class="subpage-banner py-4 bg-dark text-white text-center border-bottom border-warning border-4" style="background: linear-gradient(135deg, #4A1515 0%, #2A0808 100%);">
-    <div class="container-xxl">
-        <h2 class="h2 fw-bold text-warning text-uppercase mb-1" style="font-family: var(--font-heading);">DAFTAR MARGA PARNA</h2>
-        <p class="fs-6 text-light mb-0">Daftar Marga Resmi dalam Parsadaan Pomparan Ni Raja Nai Ambaton</p>
+<section class="subpage-banner">
+    <div class="subpage-banner-content">
+        <h2>MARGA PARNA</h2>
+        <p class="tagline">Daftar Marga dalam Parsadaan Pomparan Ni Raja Nai Ambaton</p>
+        <p class="desc">
+            Berikut adalah marga-marga yang tergabung dalam Parna, keturunan Raja Nai Ambaton (Tuan Sorba Di Julu).
+        </p>
     </div>
 </section>
 
-<div class="container-xxl my-5">
-    <!-- Search & Filter Form Ramah Lansia (Tombol & Text Input Besar) -->
-    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
-        <form action="{{ route('marga') }}" method="GET" class="row g-3 align-items-center">
-            <div class="col-12 col-md-7">
-                <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0 rounded-start-pill ps-3"><i class="bi bi-search text-danger fs-5"></i></span>
-                    <input type="text" name="q" value="{{ request('q') }}" class="form-control form-control-lg border-start-0 rounded-end-pill fs-5" placeholder="Ketik nama marga (contoh: Simbolon, Tamba, Saragih)...">
+<!-- Main Container Layout (3 Columns Layout) -->
+<div class="layout-container">
+    <div class="grid-3-col">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <!-- Navigation Menu Card -->
+            <div class="sidebar-card">
+                <h4 class="sidebar-title">DAFTAR MARGA</h4>
+                <ul class="sidebar-nav-list">
+                    <li class="sidebar-nav-item active">
+                        <a href="{{ route('marga') }}"><i class="bi bi-grid-fill"></i> Semua Marga</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-sort-alpha-down"></i> Daftar Marga (A-Z)</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-diagram-2"></i> Berdasarkan Cabang</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-map-fill"></i> Peta Persebaran</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-bar-chart-fill"></i> Statistik Marga</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Info Menu Card -->
+            <div class="sidebar-card">
+                <h4 class="sidebar-title">INFORMASI</h4>
+                <ul class="sidebar-nav-list">
+                    <li class="sidebar-nav-item">
+                        <a href="{{ route('tentang') }}"><i class="bi bi-question-circle-fill"></i> Apa itu Parna?</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-book-fill"></i> Aturan Adat Parna</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#"><i class="bi bi-patch-question-fill"></i> Tanya Jawab</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Marga Count Box -->
+            <div class="sidebar-card" style="background: #FAF6F0; border-color: var(--parna-gold-border); text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 6px;">
+                    <div style="width: 44px; height: 44px; background: var(--parna-maroon); color: var(--parna-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div style="text-align: left;">
+                        <span style="font-size: 0.65rem; font-weight: 700; color: var(--parna-text-muted); letter-spacing: 0.8px; text-transform: uppercase;">JUMLAH MARGA</span>
+                        <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--parna-maroon); margin: 0;">{{ $margas->count() }}+</h4>
+                        <p style="font-size: 0.72rem; color: var(--parna-text-muted); margin: 0;">Marga dalam Parna</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
-                <select name="branch" class="form-select form-select-lg rounded-pill fs-6" onchange="this.form.submit()">
-                    <option value="">-- Semua Rumpun Cabang --</option>
+
+            <!-- Falsafah Quote Box -->
+            <div class="quote-box">
+                <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                <div class="quote-text">
+                    "Somba marhula-hula, elek marboru, manat mardongan tubu."
+                </div>
+                <div class="quote-author">– Falsafah Batak Toba</div>
+            </div>
+        </aside>
+
+        <!-- CENTER MAIN CONTENT -->
+        <main class="main-content">
+            <!-- Breadcrumb Bar -->
+            <div class="breadcrumb-bar">
+                <a href="{{ route('home') }}">Beranda</a>
+                <i class="bi bi-chevron-right"></i>
+                <span>Marga Parna</span>
+            </div>
+
+            <!-- Notice Box -->
+            <div class="notice-box">
+                <div class="notice-icon">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="notice-content">
+                    <p>
+                        Parna menaungi lebih dari <strong>{{ $margas->count() }} marga</strong> yang berasal dari satu leluhur, <strong>Raja Nai Ambaton (Tuan Sorba Di Julu)</strong>. Sesama Pomparan Raja Nai Ambaton (Parna) tidak diperbolehkan menikah menurut adat Batak Toba.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filter & Search Bar -->
+            <form action="{{ route('marga') }}" method="GET" class="marga-filter-bar">
+                <div class="search-input-wrap">
+                    <i class="bi bi-search"></i>
+                    <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari marga...">
+                </div>
+                <select name="branch" class="sort-select" onchange="this.form.submit()">
+                    <option value="">-- Urutkan --</option>
                     @foreach($branches as $branch)
                         <option value="{{ $branch }}" {{ request('branch') == $branch ? 'selected' : '' }}>{{ $branch }}</option>
                     @endforeach
                 </select>
-            </div>
-            <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-lg btn-danger rounded-pill fw-bold w-100 fs-6 shadow-sm" style="background-color: var(--parna-maroon);">
-                    <i class="bi bi-funnel-fill me-1"></i> FILTER
-                </button>
-            </div>
-        </form>
-    </div>
+            </form>
 
-    <!-- Marga Grid Result (Data Dinamis DB) -->
-    <div class="d-flex align-items-center justify-content-between mb-3">
-        <h4 class="h5 fw-bold text-secondary mb-0">Menampilkan {{ $margas->count() }} Marga Parna</h4>
-        @if(request('q') || request('branch'))
-            <a href="{{ route('marga') }}" class="btn btn-sm btn-outline-secondary rounded-pill"><i class="bi bi-x-circle me-1"></i> Reset Pencarian</a>
-        @endif
-    </div>
+            <!-- Section Title -->
+            <h3 class="section-header-title">DAFTAR MARGA PARNA</h3>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mb-5">
-        @forelse($margas as $marga)
-            <div class="col">
-                <div class="card h-100 border rounded-3 p-3 shadow-sm hover-shadow transition">
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center text-danger fw-bold fs-3" style="width: 52px; height: 52px; background-color: #F8EFE7;">
-                            {{ strtoupper(substr($marga->name, 0, 1)) }}
+            <!-- Marga Grid (Data Dinamis DB) -->
+            <div class="marga-grid">
+                @forelse($margas as $index => $marga)
+                    <div class="marga-card">
+                        <div class="marga-card-icon">
+                            <i class="bi bi-shield-fill-check"></i>
                         </div>
-                        <div>
-                            <h4 class="h5 fw-bold mb-1 text-dark">{{ $marga->name }}</h4>
-                            <span class="badge bg-danger-subtle text-danger border border-danger-subtle small">{{ $marga->branch_group }}</span>
+                        <div class="marga-card-info">
+                            <h4>{{ $index + 1 }}. {{ $marga->name }}</h4>
+                            <p>Cabang {{ $marga->branch_group }}</p>
                         </div>
                     </div>
-                    @if($marga->description)
-                        <p class="small text-muted mt-2 mb-0 border-top pt-2">{{ Str::limit($marga->description, 80) }}</p>
-                    @endif
+                @empty
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem;">
+                        <i class="bi bi-search" style="font-size: 2.5rem; color: var(--parna-text-muted);"></i>
+                        <h4 style="margin-top: 1rem; color: var(--parna-maroon);">Marga tidak ditemukan</h4>
+                        <p style="color: var(--parna-text-muted); font-size: 0.88rem;">Coba gunakan kata kunci pencarian yang lain.</p>
+                    </div>
+                @endforelse
+            </div>
+
+            <!-- Bottom Load More Button -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn-outline-maroon" style="padding: 10px 30px;">
+                    Lihat Semua Marga ({{ $margas->count() }}+) <i class="bi bi-chevron-down"></i>
+                </button>
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR (FAKTA PARNA) -->
+        <aside class="sidebar-right">
+            <div class="sidebar-card">
+                <h4 class="sidebar-title">FAKTA PARNA</h4>
+                
+                <div class="fact-item">
+                    <div class="fact-icon">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
+                    <div class="fact-info">
+                        <h5>1 Leluhur</h5>
+                        <p>Raja Nai Ambaton (Tuan Sorba Di Julu)</p>
+                    </div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div class="fact-info">
+                        <h5>{{ $margas->count() }}+ Marga</h5>
+                        <p>Tergabung dalam Parsadaan Parna</p>
+                    </div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-icon">
+                        <i class="bi bi-globe-asia-australia"></i>
+                    </div>
+                    <div class="fact-info">
+                        <h5>Ribuan Keluarga</h5>
+                        <p>Tersebar di Indonesia & Dunia</p>
+                    </div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-icon">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+                    <div class="fact-info">
+                        <h5>Satu Adat</h5>
+                        <p>Dalihan Na Tolu, Adat & Budaya</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <a href="{{ route('tarombo') }}" class="btn-primary-maroon btn-block">
+                        <i class="bi bi-diagram-3-fill"></i> Lihat Tarombo Parna
+                    </a>
                 </div>
             </div>
-        @empty
-            <div class="col-12 text-center py-5">
-                <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
-                <h4 class="h5 fw-bold text-muted">Marga yang Anda cari tidak ditemukan.</h4>
-                <p class="text-secondary small">Coba ketik nama marga lain seperti Simbolon, Tamba, Saragih, Munthe, Sitio.</p>
-            </div>
-        @endforelse
+        </aside>
     </div>
 </div>
 @endsection

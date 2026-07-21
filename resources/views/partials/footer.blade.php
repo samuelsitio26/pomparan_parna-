@@ -1,54 +1,83 @@
-<!-- Bootstrap 5 Footer -->
-<footer class="parna-footer bg-dark text-white pt-5 pb-4 mt-5 border-top border-warning border-4">
-    <div class="container-xxl">
-        <div class="row g-4">
-            <div class="col-12 col-md-4">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center text-warning" style="width: 44px; height: 44px; background-color: var(--parna-maroon);">
-                        <i class="bi bi-shield-shaded fs-4"></i>
-                    </div>
-                    <h3 class="h4 mb-0 fw-bold text-warning" style="font-family: var(--font-heading);">PARNA</h3>
+<footer class="parna-footer">
+    <div class="footer-container">
+        <!-- Col 1: Brand -->
+        <div class="footer-col">
+            <div class="brand-logo" style="margin-bottom: 1rem;">
+                <div class="brand-icon">
+                    <i class="bi bi-shield-shaded"></i>
                 </div>
-                <p class="text-light-50 small mb-3">
-                    Parsadaan Pomparan Ni Raja Nai Ambaton (PARNA) — Wadah persatuan adat, melestarikan silsilah tarombo leluhur Raja Nai Ambaton untuk seluruh generasi.
-                </p>
-                <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <div class="brand-text">
+                    <h1 style="color: #FFFFFF;">PARNA</h1>
+                    <p style="color: var(--parna-gold-light);">PARSADAAN POMPARAN NI RAJA NAI AMBATON</p>
                 </div>
             </div>
-
-            <div class="col-6 col-md-2">
-                <h5 class="fw-bold text-warning mb-3">Navigasi</h5>
-                <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-                    <li><a href="{{ route('home') }}" class="text-white-50 text-decoration-none">Beranda</a></li>
-                    <li><a href="{{ route('tarombo') }}" class="text-white-50 text-decoration-none">Tarombo Silsilah</a></li>
-                    <li><a href="{{ route('marga') }}" class="text-white-50 text-decoration-none">Daftar Marga</a></li>
-                    <li><a href="{{ route('berita') }}" class="text-white-50 text-decoration-none">Berita & Kegiatan</a></li>
-                    <li><a href="{{ route('tentang') }}" class="text-white-50 text-decoration-none">Tentang Parna</a></li>
-                </ul>
-            </div>
-
-            <div class="col-6 col-md-3">
-                <h5 class="fw-bold text-warning mb-3">Tautan Cepat</h5>
-                <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-                    <li><a href="{{ route('marga') }}" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Cari Marga Parna</a></li>
-                    <li><a href="{{ route('tarombo') }}" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Pohon Silsilah Digital</a></li>
-                    <li><a href="{{ route('tentang') }}" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Sejarah Raja Nai Ambaton</a></li>
-                </ul>
-            </div>
-
-            <div class="col-12 col-md-3">
-                <h5 class="fw-bold text-warning mb-3">Kontak Adat</h5>
-                <p class="small text-white-50 mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Samosir & Medan, Sumatera Utara</p>
-                <p class="small text-white-50 mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> sekretariat@parna.or.id</p>
-                <p class="small text-white-50 mb-0"><i class="bi bi-telephone-fill text-warning me-2"></i> +62 812-3456-7890</p>
+            <p style="font-size: 0.82rem; color: #C2B3A3; line-height: 1.5; margin-bottom: 1.2rem;">
+                Menyatukan Pomparan,<br>Melestarikan Warisan Leluhur.
+            </p>
+            <div style="display: flex; gap: 10px; font-size: 1.1rem;">
+                <a href="#" style="color: #E2D5C7;"><i class="bi bi-facebook"></i></a>
+                <a href="#" style="color: #E2D5C7;"><i class="bi bi-instagram"></i></a>
+                <a href="#" style="color: #E2D5C7;"><i class="bi bi-youtube"></i></a>
+                <a href="#" style="color: #E2D5C7;"><i class="bi bi-globe"></i></a>
             </div>
         </div>
 
-        <div class="border-top border-secondary mt-4 pt-3 text-center small text-white-50">
-            <p class="mb-0">&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (PARNA). Seluruh Hak Cipta Dilindungi.</p>
+        <!-- Col 2: Tautan Cepat -->
+        <div class="footer-col">
+            <h4>TAUTAN CEPAT</h4>
+            <ul>
+                <li><a href="{{ route('home') }}">Beranda</a></li>
+                <li><a href="{{ route('tentang') }}">Tentang Parna</a></li>
+                <li><a href="{{ route('marga') }}">Marga Parna</a></li>
+                <li><a href="{{ route('tarombo') }}">Tarombo</a></li>
+                <li><a href="{{ route('berita') }}">Berita & Kegiatan</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
         </div>
+
+        <!-- Col 3: Informasi -->
+        <div class="footer-col">
+            <h4>INFORMASI</h4>
+            <ul>
+                <li><a href="{{ route('tentang') }}">Sejarah Parna</a></li>
+                <li><a href="#">Aturan Adat</a></li>
+                <li><a href="#">Panduan Adat</a></li>
+                <li><a href="#">Dokumen & Arsip</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 4: Hubungi Kami -->
+        <div class="footer-col">
+            <h4>HUBUNGI KAMI</h4>
+            <ul style="gap: 12px;">
+                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
+                    <i class="bi bi-telephone-fill" style="color: var(--parna-gold);"></i> +62 812-3456-7890
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
+                    <i class="bi bi-envelope-fill" style="color: var(--parna-gold);"></i> info@parna.or.id
+                </li>
+                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
+                    <i class="bi bi-geo-alt-fill" style="color: var(--parna-gold);"></i> Sumatera Utara, Indonesia
+                </li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Ikuti Kami -->
+        <div class="footer-col">
+            <h4>IKUTI KAMI</h4>
+            <p style="font-size: 0.82rem; color: #C2B3A3; margin-bottom: 1rem; line-height: 1.4;">
+                Dapatkan informasi terbaru seputar kegiatan dan berita Parna.
+            </p>
+            <div class="footer-newsletter-input">
+                <input type="email" placeholder="Masukkan email Anda">
+                <button type="button"><i class="bi bi-send-fill"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (PARNA). Seluruh Hak Cipta Dilindungi.</p>
     </div>
 </footer>
