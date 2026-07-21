@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             MargaSeeder::class,
             TaromboSeeder::class,
             BeritaSeeder::class,
+            GaleriSeeder::class,
         ]);
     }
 }

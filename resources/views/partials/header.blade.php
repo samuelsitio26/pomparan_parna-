@@ -33,10 +33,10 @@
                 <a href="{{ route('berita') }}" class="nav-link {{ request()->routeIs('berita') ? 'active' : '' }}">BERITA & KEGIATAN</a>
             </li>
             <li>
-                <a href="#" class="nav-link">GALERI</a>
+                <a href="{{ route('galeri') }}" class="nav-link {{ request()->routeIs('galeri') ? 'active' : '' }}">GALERI</a>
             </li>
             <li>
-                <a href="#" class="nav-link">KONTAK</a>
+                <a href="{{ route('kontak') }}" class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}">KONTAK</a>
             </li>
         </ul>
 

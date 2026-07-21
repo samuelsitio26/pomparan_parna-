@@ -31,8 +31,8 @@
                 <li><a href="{{ route('marga') }}">Marga Parna</a></li>
                 <li><a href="{{ route('tarombo') }}">Tarombo</a></li>
                 <li><a href="{{ route('berita') }}">Berita & Kegiatan</a></li>
-                <li><a href="#">Galeri</a></li>
-                <li><a href="#">Kontak</a></li>
+                <li><a href="{{ route('galeri') }}">Galeri</a></li>
+                <li><a href="{{ route('kontak') }}">Kontak</a></li>
             </ul>
         </div>
 
@@ -59,7 +59,7 @@
                     <i class="bi bi-envelope-fill" style="color: var(--parna-gold);"></i> info@parna.or.id
                 </li>
                 <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
-                    <i class="bi bi-geo-alt-fill" style="color: var(--parna-gold);"></i> Sumatera Utara, Indonesia
+                    <i class="bi bi-geo-alt-fill" style="color: var(--parna-gold);"></i> Balige, Toba<br>Sumatera Utara, Indonesia
                 </li>
             </ul>
         </div>
@@ -78,6 +78,6 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (PARNA). Seluruh Hak Cipta Dilindungi.</p>
+        <p>&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (Parna). All Rights Reserved.</p>
     </div>
 </footer>
