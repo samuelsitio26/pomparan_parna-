@@ -8,232 +8,66 @@
 
 @section('content')
 <!-- Subpage Banner Hero -->
-<section class="subpage-banner">
-    <div class="subpage-banner-content">
-        <h2>TAROMBO PARNA</h2>
-        <p class="tagline">SILSIALH KETURUNAN RAJA NAI AMBATON</p>
+<section class="subpage-banner py-4 bg-dark text-white text-center border-bottom border-warning border-4" style="background: linear-gradient(135deg, #4A1515 0%, #2A0808 100%);">
+    <div class="container-xxl">
+        <h2 class="h2 fw-bold text-warning text-uppercase mb-1" style="font-family: var(--font-heading);">TAROMBO DIGITAL PARNA</h2>
+        <p class="fs-6 text-light mb-0">Silsilah Interaktif Keturunan Raja Nai Ambaton</p>
     </div>
 </section>
 
-<!-- Main Container Layout -->
-<div class="layout-container">
-    <div class="grid-3-col">
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar-left">
-            <div class="sidebar-card">
-                <h4 class="sidebar-title">TAROMBO MENU</h4>
-                <ul class="sidebar-nav-list">
-                    <li class="sidebar-nav-item active">
-                        <a href="#"><i class="bi bi-diagram-3-fill"></i> Tarombo Utama</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a href="#"><i class="bi bi-diagram-2-fill"></i> Garis Keturunan</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a href="{{ url('/marga-parna') }}"><i class="bi bi-card-checklist"></i> Daftar Marga Parna</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a href="#"><i class="bi bi-map-fill"></i> Peta Sebaran</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a href="#"><i class="bi bi-book-half"></i> Panduan Adat</a>
-                    </li>
-                    <li class="sidebar-nav-item">
-                        <a href="#"><i class="bi bi-info-circle-fill"></i> Info & Sumber</a>
-                    </li>
-                </ul>
+<div class="container-xxl my-5">
+    <!-- Notice Box Ramah Lansia -->
+    <div class="card border-start border-danger border-4 shadow-sm rounded-3 p-3 mb-4 bg-white">
+        <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center p-3 fs-3" style="width: 48px; height: 48px;">
+                <i class="bi bi-info-circle-fill"></i>
             </div>
-
-            <!-- Did You Know Box -->
-            <div class="sidebar-card" style="background: #FAF6F0; border-color: var(--parna-gold-border);">
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; color:var(--parna-maroon); font-weight:700; font-size:0.88rem;">
-                    <i class="bi bi-clock-history" style="font-size:1.1rem; color:var(--parna-gold);"></i> Tahukah Anda?
-                </div>
-                <p style="font-size: 0.78rem; color: var(--parna-text-muted); line-height: 1.4;">
-                    Tarombo adalah silsilah yang menjadi pedoman adat dan identitas bagi seluruh pomparan Raja Nai Ambaton (Parna).
-                </p>
+            <div>
+                <h5 class="h6 fw-bold text-danger mb-1">Panduan Membaca Tarombo</h5>
+                <p class="small text-secondary mb-0">Diagram di bawah ini menampilkan silsilah resmi berpuncak pada **Raja Nai Ambaton** (Generasi 1) yang menurunkan 4 putra utama (Generasi 2), dan marga-marga turunan (Generasi 3).</p>
             </div>
-        </aside>
+        </div>
+    </div>
 
-        <!-- CENTER MAIN CONTENT -->
-        <main class="main-content">
-            <!-- Breadcrumb -->
-            <div class="breadcrumb-bar">
-                <a href="{{ url('/') }}">Beranda</a> <i class="bi bi-chevron-right"></i> <a href="#">Tarombo</a> <i class="bi bi-chevron-right"></i> <span>Tarombo Utama</span>
+    <!-- Dynamic Tarombo Hierarchy Diagram -->
+    <div class="tarombo-tree-wrapper card border-0 shadow-lg rounded-4 p-4 mb-5">
+        <!-- Root Generation 1 Node -->
+        @if($rootNode)
+            <div class="tree-root-box bg-danger text-white text-center rounded-3 p-3 mx-auto shadow-sm border border-warning border-2 mb-4" style="max-width: 420px; background-color: var(--parna-maroon) !important;">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-2">GENERASI 1 (LELUHUR AGUNG)</span>
+                <h3 class="h4 fw-bold text-white mb-1" style="font-family: var(--font-heading);">{{ $rootNode->name }}</h3>
+                <p class="small text-warning-subtle mb-0">{{ $rootNode->biography }}</p>
             </div>
+            <div class="tree-vertical-connector bg-warning mx-auto mb-4" style="width: 3px; height: 36px;"></div>
+        @endif
 
-            <!-- TAROMBO TREE VIEW CONTAINER -->
-            <div class="tarombo-tree-wrapper">
-                <!-- Legend Row -->
-                <div class="tarombo-legend">
-                    <div class="legend-item">
-                        <div class="legend-color main"></div> Garis Utama
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color second"></div> Generasi Lanjutan
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color branch"></div> Cabang Marga
-                    </div>
-                </div>
+        <!-- Generation 2 Grid (4 Putra Utama) -->
+        <h4 class="h6 text-center text-uppercase fw-bold text-muted mb-3"><i class="bi bi-diagram-2-fill me-1 text-danger"></i> GENERASI 2 (4 PUTRA UTAMA)</h4>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
+            @foreach($generation2 as $gen2Node)
+                <div class="col">
+                    <div class="card h-100 border border-warning border-2 rounded-3 p-3 shadow-sm bg-light text-center">
+                        <span class="badge bg-danger text-white px-2 py-1 mb-2">{{ $gen2Node->generation_level ? 'Gen 2' : '' }}</span>
+                        <h4 class="h5 fw-bold text-danger mb-1">{{ $gen2Node->name }}</h4>
+                        <p class="small text-muted mb-2">{{ $gen2Node->biography }}</p>
 
-                <!-- Root Box Ancestor -->
-                <div class="tree-root-box">
-                    <div style="font-size: 1.2rem; color: var(--parna-gold); margin-bottom: 2px;"><i class="bi bi-award-fill"></i></div>
-                    <h3>RAJA NAI AMBATON</h3>
-                    <p>(TUAN SORBA DI JULU)</p>
-                </div>
-
-                <!-- Level 1 Siblings -->
-                <div class="tree-level-1">
-                    <div class="tree-node-sm">Tuan Sorba Dibanua</div>
-                    <div class="tree-node-sm">Tuan Sorba Dijou</div>
-                    <div class="tree-node-sm">Tuan Sorba Ditonga</div>
-                    <div class="tree-node-sm">Tuan Sorba Dibagasan</div>
-                    <div class="tree-node-sm">Tuan Sorba Dibarita</div>
-                    <div class="tree-node-sm">Tuan Sorba Diboru</div>
-                    <div class="tree-node-sm">Tuan Sorba Dibata</div>
-                </div>
-
-                <!-- Connector Line -->
-                <div class="tree-vertical-connector"></div>
-
-                <!-- Middle Direct Ancestors Chain -->
-                <div class="tree-middle-chain">
-                    <div class="tree-node-mid">Guru Tatea Bulan</div>
-                    <div class="tree-vertical-connector" style="height:15px; margin:0;"></div>
-                    <div class="tree-node-mid">Siboru Deak Parujar</div>
-                    <div class="tree-vertical-connector" style="height:15px; margin:0;"></div>
-                    <div class="tree-node-mid" style="background:#FAF0DD; border-color:var(--parna-maroon); font-weight:800;">
-                        Tuan Sorba Di Julu (Raja Nai Ambaton)
+                        <!-- Children / Keturunan Gen 3 -->
+                        @if($gen2Node->children->count() > 0)
+                            <div class="border-top pt-2 mt-2">
+                                <span class="small fw-bold text-secondary d-block mb-1">Keturunan / Marga:</span>
+                                <ul class="list-unstyled small mb-0 text-start">
+                                    @foreach($gen2Node->children as $child)
+                                        <li class="py-1 border-bottom text-dark fw-medium">
+                                            <i class="bi bi-dash text-danger me-1"></i> {{ $child->name }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                 </div>
-
-                <!-- Connector Line -->
-                <div class="tree-vertical-connector"></div>
-
-                <!-- 7 Branch Lineages Grid -->
-                <div class="tree-branches-grid">
-                    <!-- Branch 1 -->
-                    <div class="branch-card">
-                        <h5>1. Sitio</h5>
-                        <ul>
-                            <li>Sitio</li>
-                            <li>Sidabutar</li>
-                            <li>Turnip</li>
-                            <li>Siallagan</li>
-                            <li>Rumahorbo</li>
-                            <li>Napitu</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 2 -->
-                    <div class="branch-card">
-                        <h5>2. Simbolon</h5>
-                        <ul>
-                            <li>Simbolon</li>
-                            <li>Manurung</li>
-                            <li>Panggabean</li>
-                            <li>Hutabarat</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 3 -->
-                    <div class="branch-card">
-                        <h5>3. Tinambunan</h5>
-                        <ul>
-                            <li>Tinambunan</li>
-                            <li>Tumanggor</li>
-                            <li>Munthe</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 4 -->
-                    <div class="branch-card">
-                        <h5>4. Saragi</h5>
-                        <ul>
-                            <li>Saragi</li>
-                            <li>Simarmata</li>
-                            <li>Sinambela</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 5 -->
-                    <div class="branch-card">
-                        <h5>5. Nadeak</h5>
-                        <ul>
-                            <li>Nadeak</li>
-                            <li>Pardede</li>
-                            <li>Butarbutar</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 6 -->
-                    <div class="branch-card">
-                        <h5>6. Sigalingging</h5>
-                        <ul>
-                            <li>Sigalingging</li>
-                            <li>Sitanggang</li>
-                            <li>Silaban</li>
-                        </ul>
-                    </div>
-
-                    <!-- Branch 7 -->
-                    <div class="branch-card">
-                        <h5>7. Lainnya</h5>
-                        <ul>
-                            <li>Naibaho</li>
-                            <li>Lumbantobing</li>
-                            <li>Sitorus</li>
-                            <li>Gultom</li>
-                            <li>Dan marga lainnya</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Notes Box -->
-            <div style="background:#FFF8EE; border:1px solid #EEDBB9; border-radius:var(--parna-radius-sm); padding:10px 14px; display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--parna-text-muted);">
-                <i class="bi bi-info-circle-fill" style="color:var(--parna-maroon); font-size:1.1rem;"></i>
-                <span><strong>Catatan:</strong> Tarombo ini adalah representasi garis besar. Detail lengkap dan variasi tarombo dapat berbeda menurut sumber dan wilayah.</span>
-            </div>
-        </main>
-
-        <!-- RIGHT SIDEBAR -->
-        <aside class="sidebar-right">
-            <div class="sidebar-card">
-                <h4 class="sidebar-title">TENTANG TAROMBO</h4>
-                <p style="font-size: 0.82rem; color: var(--parna-text-muted); line-height: 1.4; margin-bottom: 1rem;">
-                    Tarombo Parna menghubungkan kita dengan leluhur kita, Raja Nai Ambaton. Mengetahui tarombo berarti menjaga jati diri, adat, dan persaudaraan.
-                </p>
-
-                <div style="text-align: center; margin-bottom: 1.2rem;">
-                    <img src="/images/batak_tree.png" alt="Pohon Tarombo" style="max-height: 120px; margin: 0 auto; opacity: 0.85;">
-                </div>
-
-                <div class="quote-box" style="margin-bottom: 1.2rem;">
-                    <p class="quote-text">
-                        "Somba marhula-hula, elelek marboru, manat mardongan tubu."
-                    </p>
-                </div>
-
-                <div style="font-size: 0.78rem; color: var(--parna-text-main); display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.2rem;">
-                    <div style="display:flex; align-items:center; gap:6px;">
-                        <i class="bi bi-crown-fill" style="color:var(--parna-gold);"></i> Raja / Leluhur Utama
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px;">
-                        <i class="bi bi-diagram-2" style="color:#D4A359;"></i> Generasi Lanjutan
-                    </div>
-                    <div style="display:flex; align-items:center; gap:6px;">
-                        <i class="bi bi-tree-fill" style="color:#4A8C80;"></i> Cabang Marga (Keturunan)
-                    </div>
-                </div>
-
-                <button class="btn-primary-maroon btn-block" onclick="alert('Mengunduh dokumen PDF Tarombo Parna...')">
-                    <i class="bi bi-download"></i> UNDUH TAROMBO (PDF)
-                </button>
-            </div>
-        </aside>
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection
