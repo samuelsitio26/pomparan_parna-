@@ -15,13 +15,15 @@ class AdminDashboardController extends Controller
         $margaCount = Marga::count();
         $taromboCount = Tarombo::count();
         $beritaCount = Berita::count();
-        $galeriCount = Galeri::count();
+        $galeriCount = Galeri::sum('photo_count');
+        $recentBerita = Berita::latest()->take(5)->get();
 
         return view('pages.admin.dashboard', compact(
             'margaCount',
             'taromboCount',
             'beritaCount',
-            'galeriCount'
+            'galeriCount',
+            'recentBerita'
         ));
     }
 }
