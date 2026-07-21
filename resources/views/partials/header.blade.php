@@ -39,12 +39,5 @@
                 <a href="{{ route('kontak') }}" class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}">KONTAK</a>
             </li>
         </ul>
-
-        <!-- Right Action Button -->
-        <div class="header-action">
-            <a href="#" class="btn-login">
-                <i class="bi bi-person-fill"></i> LOGIN / DAFTAR
-            </a>
-        </div>
     </div>
 </header>

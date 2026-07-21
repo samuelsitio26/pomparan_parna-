@@ -8,26 +8,26 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminDashboardController;
 
-// Halaman Utama / Beranda
+// Public Website Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Halaman Tentang Parna
 Route::get('/tentang-parna', [TentangController::class, 'index'])->name('tentang');
-
-// Halaman Marga Parna
 Route::get('/marga-parna', [MargaController::class, 'index'])->name('marga');
-
-// Halaman Tarombo Silsilah
 Route::get('/tarombo', [TaromboController::class, 'index'])->name('tarombo');
-
-// Halaman Berita & Kegiatan
 Route::get('/berita-kegiatan', [BeritaController::class, 'index'])->name('berita');
 Route::get('/berita-kegiatan/{slug}', [BeritaController::class, 'show'])->name('berita.detail');
-
-// Halaman Galeri Dokumentasi
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
-
-// Halaman Kontak Kami
 Route::get('/kontak', [KontakController::class, 'index'])->name('kontak');
 Route::post('/kontak', [KontakController::class, 'send'])->name('kontak.send');
+
+// Hidden Admin Routes (Akses khusus via ketik URL /admin)
+Route::get('/admin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm']);
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+});
