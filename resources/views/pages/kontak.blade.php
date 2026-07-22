@@ -16,7 +16,7 @@
 
 <!-- Main Container Layout -->
 <div class="layout-container">
-    <div class="grid-2-col-left">
+    <div class="grid-2-col-equal">
         <!-- LEFT COLUMN: HUBUNGI KAMI -->
         <div>
             <h3 class="section-header-title">

@@ -140,7 +140,7 @@
                     <div class="sidebar-card" style="padding: 0; overflow: hidden; margin: 0; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
                         <!-- Thumbnail Image -->
                         <div style="height: 140px; overflow: hidden; position: relative;">
-                            <img src="{{ asset($galeri->thumbnail ?? 'images/batak_festival.jpg') }}" alt="{{ $galeri->title }}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='/images/hero_toba.jpg'">
+                            <img src="{{ asset($galeri->thumbnail ?? 'images/batak_festival.jpg') }}" alt="{{ $galeri->title }}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='/images/hero_toba.png'">
                         </div>
 
                         <!-- Card Body Info -->

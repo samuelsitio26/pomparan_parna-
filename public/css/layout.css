@@ -140,7 +140,7 @@
 /* SUBPAGE BANNER HERO */
 .subpage-banner {
     background: linear-gradient(135deg, rgba(74,21,21,0.95) 0%, rgba(45,10,10,0.92) 100%), 
-                url('/images/hero_toba.jpg') center/cover no-repeat;
+                url('/images/hero_toba.png') center/cover no-repeat;
     color: #FFFFFF;
     padding: 3rem 1.5rem;
     position: relative;
@@ -202,6 +202,12 @@
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 1.8rem;
+}
+
+.grid-2-col-equal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 /* SIDEBAR CARDS */

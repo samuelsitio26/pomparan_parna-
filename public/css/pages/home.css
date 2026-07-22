@@ -41,8 +41,7 @@ body {
 .home-hero-main {
     flex: 1;
     background: linear-gradient(90deg, #FBF8F3 0%, #FAF4EB 42%, rgba(250,244,235,0.15) 75%),
-                url('/images/hero_toba.png') right center / cover no-repeat,
-                url('/images/hero_toba.jpg') right center / cover no-repeat;
+                url('/images/hero_toba.png') right center / cover no-repeat;
     padding: 2.2rem 3rem;
     display: flex;
     align-items: center;

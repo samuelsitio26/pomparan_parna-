@@ -64,16 +64,36 @@
                 <i class="bi bi-compass-fill" style="color: var(--parna-gold);"></i> SEJARAH PARNA
             </h3>
 
-            <div class="tentang-content-box" style="display: flex; gap: 1.5rem; align-items: flex-start;">
+            <div class="tentang-content-box" style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.5rem;">
                 <div style="flex: 0 0 240px;">
-                    <img src="{{ asset('images/batak_festival.jpg') }}" alt="Tokoh Adat Parna" style="width: 100%; border-radius: var(--parna-radius-md); border: 1px solid var(--parna-border); box-shadow: var(--parna-shadow-sm);" onerror="this.src='/images/hero_toba.jpg'">
+                    <img src="{{ asset('images/batak_festival.jpg') }}" alt="Tokoh Adat Parna" style="width: 100%; border-radius: var(--parna-radius-md); border: 1px solid var(--parna-border); box-shadow: var(--parna-shadow-sm);" onerror="this.src='/images/hero_toba.png'">
                 </div>
-                <div style="flex: 1;">
-                    <p>
-                        <strong>Parna</strong> adalah singkatan dari <strong>Parsadaan Pomparan Ni Raja Nai Ambaton (Tuan Sorba Di Julu)</strong>. Parna merupakan persekutuan besar keturunan Raja Nai Ambaton yang terdiri dari berbagai marga. Ikatan ini lahir dari satu leluhur yang sama dan dipersatukan dalam semangat dalihan na tolu, persaudaraan, dan pelestarian adat istiadat Batak Toba.
+                <div style="flex: 1; font-size: 0.85rem; line-height: 1.6; color: var(--parna-text-main);">
+                    <h4 style="font-size: 1.05rem; color: var(--parna-maroon); font-weight: 700; margin-bottom: 0.4rem;">Pengertian Parna</h4>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Parsadaan Pomparan Raja Nai Ambaton (Parna)</strong> adalah sebuah perkumpulan yang menghimpun keturunan Raja Nai Ambaton (Tuan Sorbadijulu), salah satu leluhur penting dalam silsilah Batak Toba. Nama Parna merupakan akronim dari Parsadaan Pomparan Raja Nai Ambaton.
+                    </p>
+                    <h4 style="font-size: 1.05rem; color: var(--parna-maroon); font-weight: 700; margin-bottom: 0.4rem;">Silsilah Singkat</h4>
+                    <p style="margin-bottom: 0.5rem;">
+                        Dalam silsilah Batak, terdapat dua garis keturunan utama, yaitu <strong>Guru Tatea Bulan</strong> dan <strong>Raja Isumbaon</strong>. Raja Isumbaon memiliki keturunan bernama Tuan Sorimangaraja, yang kemudian menikah dengan Si Boru Anting Sabungan, keturunan Guru Tatea Bulan.
                     </p>
                     <p>
-                        Sejak dahulu, Pomparan Raja Nai Ambaton hidup berdampingan, saling mendukung, menjaga kehormatan leluhur, serta berperan aktif dalam kehidupan sosial, budaya, dan pembangunan masyarakat.
+                        Dari pernikahan tersebut lahirlah Tuan Sorbadijulu, yang kemudian dikenal dengan gelar Raja Nai Ambaton atau Datu Sindar Mataniari. Seluruh keturunan Raja Nai Ambaton inilah yang kemudian dikenal sebagai <strong>Pomparan Parna</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div style="background: #FFFFFF; border: 1px solid var(--parna-border); border-radius: var(--parna-radius-md); padding: 1.2rem; box-shadow: var(--parna-shadow-sm);">
+                    <h4 style="font-size: 0.95rem; color: var(--parna-maroon); font-weight: 700; margin-bottom: 0.6rem;"><i class="bi bi-geo-alt-fill" style="color: var(--parna-gold); margin-right: 4px;"></i> Persebaran Wilayah</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.5; color: var(--parna-text-muted); margin: 0;">
+                        Wilayah awal penyebaran keturunan Raja Nai Ambaton berada di bagian barat hingga utara Pulau Samosir. Seiring waktu, Pomparan Parna menyebar ke berbagai daerah di Indonesia bahkan ke mancanegara, sambil tetap menjaga nilai-nilai adat, budaya, dan persaudaraan Batak Toba.
+                    </p>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid var(--parna-border); border-radius: var(--parna-radius-md); padding: 1.2rem; box-shadow: var(--parna-shadow-sm);">
+                    <h4 style="font-size: 0.95rem; color: var(--parna-maroon); font-weight: 700; margin-bottom: 0.6rem;"><i class="bi bi-diagram-3-fill" style="color: var(--parna-gold); margin-right: 4px;"></i> Marga-Marga Parna</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.5; color: var(--parna-text-muted); margin: 0; max-height: 80px; overflow-y: auto; padding-right: 0.3rem;">
+                        <strong>Marga Batak Toba:</strong> Dajawak, Dalimunte, Damuntei, Garingging, Maharaja, Munte, Nadeak, Napitu, Pinayungan, Rumahorbo, Saing, Saragi, Sumbayak, Siadari, Siallagan, Siambaton, Sidabalok, Sidabutar, Sidauruk, Sigalingging, Sijabat, Simanihuruk, Simalango, Simarmata, Simbolon, Sitanggang, Sitio, Tamba, Tinambunan, Tumanggor, Turnip, Turutan.
                     </p>
                 </div>
             </div>

@@ -535,7 +535,7 @@
                                         <tr>
                                             <td class="fw-bold text-dark" style="max-width:240px;">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <img src="{{ asset('images/hero_toba.jpg') }}" style="width:40px; height:32px; object-fit:cover; border-radius:4px;">
+                                                    <img src="{{ asset('images/hero_toba.png') }}" style="width:40px; height:32px; object-fit:cover; border-radius:4px;">
                                                     <span class="text-truncate">{{ $item->title }}</span>
                                                 </div>
                                             </td>

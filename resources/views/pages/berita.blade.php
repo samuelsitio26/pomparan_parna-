@@ -34,7 +34,7 @@
                                 <strong>{{ optional($berita->event_date)->format('d') ?? '12' }}</strong><br>
                                 <small>{{ optional($berita->event_date)->format('M Y') ?? 'Mei 2026' }}</small>
                             </div>
-                            <img src="{{ asset('images/batak_festival.jpg') }}" alt="{{ $berita->title }}" onerror="this.src='/images/hero_toba.jpg'">
+                            <img src="{{ asset('images/batak_festival.jpg') }}" alt="{{ $berita->title }}" onerror="this.src='/images/hero_toba.png'">
                         </div>
                         <div class="news-body">
                             <h4 class="news-title">{{ $berita->title }}</h4>
@@ -62,7 +62,7 @@
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;">
                 <div class="sidebar-card" style="padding: 0; overflow: hidden; margin: 0;">
                     <div style="height: 110px; overflow: hidden;">
-                        <img src="{{ asset('images/hero_toba.jpg') }}" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="{{ asset('images/hero_toba.png') }}" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                     <div style="padding: 10px;">
                         <h5 style="font-size: 0.82rem; font-weight: 700; color: var(--parna-maroon); margin-bottom: 4px;">Gotong Royong Marga Parna</h5>
@@ -82,7 +82,7 @@
 
                 <div class="sidebar-card" style="padding: 0; overflow: hidden; margin: 0;">
                     <div style="height: 110px; overflow: hidden;">
-                        <img src="{{ asset('images/hero_toba.jpg') }}" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="{{ asset('images/hero_toba.png') }}" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                     <div style="padding: 10px;">
                         <h5 style="font-size: 0.82rem; font-weight: 700; color: var(--parna-maroon); margin-bottom: 4px;">Turnamen Olahraga Parna Cup</h5>

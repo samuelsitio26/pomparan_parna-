@@ -27,7 +27,7 @@ class GaleriSeeder extends Seeder
                 'location' => 'Medan',
                 'event_date' => '2024-04-28',
                 'photo_count' => 18,
-                'thumbnail' => '/images/hero_toba.jpg',
+                'thumbnail' => '/images/hero_toba.png',
             ],
             [
                 'title' => 'Pelantikan Pengurus Wilayah Parna Sumatera Utara 2024-2027',
@@ -45,7 +45,7 @@ class GaleriSeeder extends Seeder
                 'location' => 'Balige, Toba',
                 'event_date' => '2024-03-24',
                 'photo_count' => 27,
-                'thumbnail' => '/images/hero_toba.jpg',
+                'thumbnail' => '/images/hero_toba.png',
             ],
             [
                 'title' => 'Seminar Adat & Budaya Batak',
@@ -63,7 +63,7 @@ class GaleriSeeder extends Seeder
                 'location' => 'Balige, Toba',
                 'event_date' => '2024-01-21',
                 'photo_count' => 19,
-                'thumbnail' => '/images/hero_toba.jpg',
+                'thumbnail' => '/images/hero_toba.png',
             ],
             [
                 'title' => 'Kunjungan Silaturahmi Wilayah',
@@ -81,7 +81,7 @@ class GaleriSeeder extends Seeder
                 'location' => 'Medan',
                 'event_date' => '2023-11-10',
                 'photo_count' => 16,
-                'thumbnail' => '/images/hero_toba.jpg',
+                'thumbnail' => '/images/hero_toba.png',
             ],
         ];
 
