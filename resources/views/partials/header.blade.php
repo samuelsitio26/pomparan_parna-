@@ -2,8 +2,11 @@
     <div class="header-container">
         <!-- Brand Logo -->
         <a href="{{ route('home') }}" class="brand-logo">
-            <div class="brand-icon">
-                <i class="bi bi-shield-shaded"></i>
+            <div class="brand-logo-wrapper">
+                <img src="{{ asset('images/logo.png') }}" alt="PARNA Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="brand-icon-fallback" style="display: none;">
+                    <i class="bi bi-shield-shaded"></i>
+                </div>
             </div>
             <div class="brand-text">
                 <h1>PARNA</h1>
@@ -22,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('marga') }}" class="nav-link {{ request()->routeIs('marga') ? 'active' : '' }}">MARGA PARNA</a>
+                <a href="{{ route('marga') }}" class="nav-link {{ request()->routeIs('marga') ? 'active' : '' }}">MARGA PARNA <i class="bi bi-chevron-down" style="font-size:0.7rem;"></i></a>
             </li>
             <li>
                 <a href="{{ route('tarombo') }}" class="nav-link {{ request()->routeIs('tarombo') ? 'active' : '' }}">

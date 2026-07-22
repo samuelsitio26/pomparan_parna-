@@ -1,83 +1,59 @@
 <footer class="parna-footer">
     <div class="footer-container">
-        <!-- Col 1: Brand -->
-        <div class="footer-col">
-            <div class="brand-logo" style="margin-bottom: 1rem;">
-                <div class="brand-icon">
-                    <i class="bi bi-shield-shaded"></i>
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-col footer-col-brand">
+            <div class="brand-logo" style="margin-bottom: 0.8rem;">
+                <div class="brand-logo-wrapper">
+                    <img src="{{ asset('images/logo.png') }}" alt="PARNA Logo" class="brand-logo-img-footer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="brand-icon-fallback" style="display: none;">
+                        <i class="bi bi-shield-shaded"></i>
+                    </div>
                 </div>
                 <div class="brand-text">
-                    <h1 style="color: #FFFFFF;">PARNA</h1>
-                    <p style="color: var(--parna-gold-light);">PARSADAAN POMPARAN NI RAJA NAI AMBATON</p>
+                    <h1 style="color: #FFFFFF; font-size: 1.25rem;">PARNA</h1>
+                    <p style="color: #E8D4A8; font-size: 0.6rem;">PARSADAAN POMPARAN NI RAJA NAI AMBATON</p>
                 </div>
             </div>
-            <p style="font-size: 0.82rem; color: #C2B3A3; line-height: 1.5; margin-bottom: 1.2rem;">
-                Menyatukan Pomparan,<br>Melestarikan Warisan Leluhur.
+            <p class="footer-bio-text">
+                Bersatu dalam adat, berpegang pada tarombo, melestarikan warisan leluhur untuk generasi masa depan.
             </p>
-            <div style="display: flex; gap: 10px; font-size: 1.1rem;">
-                <a href="#" style="color: #E2D5C7;"><i class="bi bi-facebook"></i></a>
-                <a href="#" style="color: #E2D5C7;"><i class="bi bi-instagram"></i></a>
-                <a href="#" style="color: #E2D5C7;"><i class="bi bi-youtube"></i></a>
-                <a href="#" style="color: #E2D5C7;"><i class="bi bi-globe"></i></a>
-            </div>
         </div>
 
         <!-- Col 2: Tautan Cepat -->
         <div class="footer-col">
             <h4>TAUTAN CEPAT</h4>
-            <ul>
-                <li><a href="{{ route('home') }}">Beranda</a></li>
-                <li><a href="{{ route('tentang') }}">Tentang Parna</a></li>
-                <li><a href="{{ route('marga') }}">Marga Parna</a></li>
-                <li><a href="{{ route('tarombo') }}">Tarombo</a></li>
-                <li><a href="{{ route('berita') }}">Berita & Kegiatan</a></li>
-                <li><a href="{{ route('galeri') }}">Galeri</a></li>
-                <li><a href="{{ route('kontak') }}">Kontak</a></li>
-            </ul>
-        </div>
-
-        <!-- Col 3: Informasi -->
-        <div class="footer-col">
-            <h4>INFORMASI</h4>
-            <ul>
-                <li><a href="{{ route('tentang') }}">Sejarah Parna</a></li>
-                <li><a href="#">Aturan Adat</a></li>
-                <li><a href="#">Panduan Adat</a></li>
-                <li><a href="#">Dokumen & Arsip</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-
-        <!-- Col 4: Hubungi Kami -->
-        <div class="footer-col">
-            <h4>HUBUNGI KAMI</h4>
-            <ul style="gap: 12px;">
-                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
-                    <i class="bi bi-telephone-fill" style="color: var(--parna-gold);"></i> +62 812-3456-7890
-                </li>
-                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
-                    <i class="bi bi-envelope-fill" style="color: var(--parna-gold);"></i> info@parna.or.id
-                </li>
-                <li style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: #C2B3A3;">
-                    <i class="bi bi-geo-alt-fill" style="color: var(--parna-gold);"></i> Balige, Toba<br>Sumatera Utara, Indonesia
-                </li>
-            </ul>
-        </div>
-
-        <!-- Col 5: Ikuti Kami -->
-        <div class="footer-col">
-            <h4>IKUTI KAMI</h4>
-            <p style="font-size: 0.82rem; color: #C2B3A3; margin-bottom: 1rem; line-height: 1.4;">
-                Dapatkan informasi terbaru seputar kegiatan dan berita Parna.
-            </p>
-            <div class="footer-newsletter-input">
-                <input type="email" placeholder="Masukkan email Anda">
-                <button type="button"><i class="bi bi-send-fill"></i></button>
+            <div class="footer-quick-links">
+                <ul>
+                    <li><a href="{{ route('tentang') }}">Tentang Parna</a></li>
+                    <li><a href="{{ route('tarombo') }}">Tarombo</a></li>
+                    <li><a href="{{ route('marga') }}">Marga Parna</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{{ route('berita') }}">Berita & Kegiatan</a></li>
+                    <li><a href="{{ route('galeri') }}">Galeri</a></li>
+                    <li><a href="{{ route('kontak') }}">Kontak</a></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (Parna). All Rights Reserved.</p>
+        <!-- Col 3: Hubungi Kami -->
+        <div class="footer-col">
+            <h4>HUBUNGI KAMI</h4>
+            <ul class="footer-contact-list">
+                <li><i class="bi bi-telephone-fill"></i> +62 812-3456-7890</li>
+                <li><i class="bi bi-envelope-fill"></i> info@parna.or.id</li>
+                <li><i class="bi bi-geo-alt-fill"></i> Sumatera Utara, Indonesia</li>
+            </ul>
+        </div>
+
+        <!-- Col 4: Ikuti Kami -->
+        <div class="footer-col">
+            <h4>IKUTI KAMI</h4>
+            <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
     </div>
 </footer>

@@ -8,26 +8,49 @@
 
 @section('content')
 <!-- Hero Section Home -->
-<section class="home-hero">
-    <div class="home-hero-content">
-        <p class="script-sub">Selamat Datang di</p>
-        <h1>PARNA</h1>
-        <h3>Parsadaan Pomparan Ni Raja Nai Ambaton</h3>
-        <p>
-            Bersatu dalam adat, berpegang pada tarombo, melestarikan warisan leluhur Raja Nai Ambaton untuk generasi masa depan.
-        </p>
-        <div class="hero-actions">
-            <a href="{{ route('tentang') }}" class="btn-primary-maroon" style="padding: 12px 28px;">
-                <i class="bi bi-book-fill"></i> PELAJARI LEBIH LANJUT
-            </a>
-            <a href="{{ route('tarombo') }}" class="btn-outline-maroon" style="padding: 11px 28px;">
-                <i class="bi bi-diagram-3-fill"></i> LIHAT TAROMBO
-            </a>
+<section class="home-hero-wrapper">
+    <!-- Left Vertical Gorga Batak Strip -->
+    <div class="hero-gorga-strip">
+        <img src="{{ asset('images/gorga_banner.png') }}" alt="Gorga Batak" class="gorga-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="gorga-svg-fallback" style="display: none;">
+            <svg width="60" height="600" viewBox="0 0 60 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="600" fill="#7A1D1D"/>
+                <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="#C59B27" opacity="0.4"/>
+                <path d="M30 60 L60 90 L30 120 L0 90 Z" fill="#C59B27" opacity="0.4"/>
+                <circle cx="30" cy="30" r="10" fill="#FAF6F0"/>
+                <circle cx="30" cy="90" r="10" fill="#FAF6F0"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Main Hero Banner Background & Content -->
+    <div class="home-hero-main">
+        <div class="home-hero-content">
+            <p class="script-sub">Selamat Datang di</p>
+            <h1 class="hero-title">PARNA</h1>
+            <h3 class="hero-subtitle">Parsadaan Pomparan Ni Raja Nai Ambaton</h3>
+            <p class="hero-desc">
+                Bersatu dalam adat, berpegang pada tarombo, melestarikan warisan leluhur Raja Nai Ambaton untuk generasi masa depan.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ route('tentang') }}" class="btn-hero-primary">
+                    <i class="bi bi-person-fill"></i> PELAJARI LEBIH LANJUT
+                </a>
+                <a href="{{ route('tarombo') }}" class="btn-hero-outline">
+                    <i class="bi bi-journal-text"></i> LIHAT TAROMBO
+                </a>
+            </div>
+            <!-- Slider Dots Indicator (Matching Mockup) -->
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Floating Highlights Row (5 Cards) -->
+<!-- Floating Highlights Row (5 Circle Pill Cards) -->
 <div class="highlights-bar">
     <div class="highlights-grid">
         <div class="highlight-item">
@@ -42,7 +65,7 @@
 
         <div class="highlight-item">
             <div class="highlight-icon">
-                <i class="bi bi-shield-check"></i>
+                <i class="bi bi-person-circle"></i>
             </div>
             <div class="highlight-text">
                 <h5>{{ $totalMargaCount }}+ Marga</h5>
@@ -52,7 +75,7 @@
 
         <div class="highlight-item">
             <div class="highlight-icon">
-                <i class="bi bi-heart-fill"></i>
+                <i class="bi bi-suit-heart-fill"></i>
             </div>
             <div class="highlight-text">
                 <h5>Satu Adat</h5>
@@ -62,7 +85,7 @@
 
         <div class="highlight-item">
             <div class="highlight-icon">
-                <i class="bi bi-book-half"></i>
+                <i class="bi bi-book-fill"></i>
             </div>
             <div class="highlight-text">
                 <h5>Satu Tarombo</h5>
@@ -72,7 +95,7 @@
 
         <div class="highlight-item">
             <div class="highlight-icon">
-                <i class="bi bi-shield-fill"></i>
+                <i class="bi bi-shield-check"></i>
             </div>
             <div class="highlight-text">
                 <h5>Satu Tujuan</h5>
@@ -83,69 +106,91 @@
 </div>
 
 <!-- Main Featured Grid Section -->
-<div class="layout-container" style="margin-top: 0;">
+<div class="layout-container" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
     <div class="home-featured-grid">
         <!-- Card 1: Tentang Parna -->
         <div class="featured-card">
-            <div>
+            <div class="featured-card-body">
                 <h3>TENTANG PARNA</h3>
+                <div class="card-gorga-divider"></div>
                 <p>
                     Parna adalah persekutuan besar keturunan Raja Nai Ambaton (Tuan Sorba Di Julu) yang terdiri dari berbagai marga dalam satu ikatan adat dan tarombo.
                 </p>
             </div>
-            <a href="{{ route('tentang') }}" class="btn-outline-maroon" style="padding: 8px 18px; font-size: 0.8rem;">
+            <a href="{{ route('tentang') }}" class="btn-card-action">
                 SELANGKAPNYA <i class="bi bi-arrow-right"></i>
             </a>
         </div>
 
         <!-- Card 2: Marga Parna -->
         <div class="featured-card">
-            <div>
+            <div class="featured-card-body">
                 <h3>MARGA PARNA</h3>
+                <div class="card-gorga-divider"></div>
                 <p>
                     Jelajahi daftar marga-marga yang tergabung dalam Parsadaan Parna. Cari tahu asal-usul dan hubungan kekerabatan setiap marga.
                 </p>
             </div>
-            <a href="{{ route('marga') }}" class="btn-outline-maroon" style="padding: 8px 18px; font-size: 0.8rem;">
+            <a href="{{ route('marga') }}" class="btn-card-action">
                 LIHAT DAFTAR MARGA <i class="bi bi-arrow-right"></i>
             </a>
         </div>
 
         <!-- Card 3: Tarombo Parna -->
-        <div class="featured-card">
-            <div>
+        <div class="featured-card featured-tarombo-card">
+            <div class="featured-card-body">
                 <h3>TAROMBO PARNA</h3>
-                <p>
-                    Tarombo adalah silsilah yang menghubungkan kita dengan leluhur kita. Pelajari garis keturunan Raja Nai Ambaton hingga marga-marga Parna saat ini.
-                </p>
-                <div style="text-align: center; margin-top: 1rem;">
-                    <img src="{{ asset('images/batak_tree.png') }}" alt="Pohon Batak" style="max-width: 110px; margin: 0 auto; opacity: 0.85;" onerror="this.style.display='none'">
+                <div class="card-gorga-divider"></div>
+                <div class="tarombo-card-content">
+                    <p>
+                        Tarombo adalah silsilah yang menghubungkan kita dengan leluhur kita. Pelajari garis keturunan Raja Nai Ambaton hingga marga-marga Parna saat ini.
+                    </p>
+                    <div class="tree-vector-wrapper">
+                        <img src="{{ asset('images/batak_tree.png') }}" alt="Pohon Batak Tarombo" class="tree-vector-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="tree-svg-fallback" style="display: none;">
+                            <svg width="90" height="90" viewBox="0 0 100 100" fill="#8C6F4E">
+                                <path d="M50 10 C30 30 20 50 20 70 C20 85 35 90 50 90 C65 90 80 85 80 70 C80 50 70 30 50 10 Z"/>
+                                <rect x="46" y="70" width="8" height="25" fill="#5D1A1A"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a href="{{ route('tarombo') }}" class="btn-outline-maroon" style="padding: 8px 18px; font-size: 0.8rem; margin-top: 1rem;">
+            <a href="{{ route('tarombo') }}" class="btn-card-action">
                 LIHAT TAROMBO <i class="bi bi-arrow-right"></i>
             </a>
         </div>
 
-        <!-- Card 4: Berita & Kegiatan (Data Dinamis DB) -->
-        <div class="featured-card" style="padding: 1.4rem;">
-            <div>
-                <h3 style="font-size: 1.05rem;">BERITA & KEGIATAN</h3>
-                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.2rem;">
-                    @foreach($featuredBerita as $berita)
-                        <div style="display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid var(--parna-border); padding-bottom: 8px;">
-                            <img src="{{ asset('images/hero_toba.jpg') }}" style="width: 50px; height: 40px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
-                            <div>
-                                <h5 style="font-size: 0.78rem; font-weight: 700; color: var(--parna-maroon); margin-bottom: 2px; line-height: 1.2;">
-                                    <a href="{{ route('berita.detail', $berita->slug) }}">{{ $berita->title }}</a>
-                                </h5>
-                                <small style="font-size: 0.68rem; color: var(--parna-text-muted);">{{ optional($berita->event_date)->format('d M Y') }}</small>
-                            </div>
+        <!-- Card 4: Berita & Kegiatan -->
+        <div class="featured-card featured-news-card">
+            <div class="featured-card-body">
+                <h3>BERITA & KEGIATAN</h3>
+                <div class="card-gorga-divider"></div>
+                <div class="home-news-list">
+                    <div class="home-news-item">
+                        <img src="{{ asset('images/berita_1.png') }}" alt="Pesta Parsadaan Parna" class="news-thumb" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+                        <div class="news-info">
+                            <h5><a href="{{ route('berita') }}">Pesta Parsadaan Parna 2024</a></h5>
+                            <span class="news-date">12 Mei 2024</span>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="home-news-item">
+                        <img src="{{ asset('images/berita_2.png') }}" alt="Rapat Pengurus Pusat" class="news-thumb" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+                        <div class="news-info">
+                            <h5><a href="{{ route('berita') }}">Rapat Pengurus Pusat Parna</a></h5>
+                            <span class="news-date">28 April 2024</span>
+                        </div>
+                    </div>
+                    <div class="home-news-item">
+                        <img src="{{ asset('images/berita_1.png') }}" alt="Pelantikan Pengurus Wilayah" class="news-thumb" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+                        <div class="news-info">
+                            <h5><a href="{{ route('berita') }}">Pelantikan Pengurus Wilayah Parna Sumatera Utara</a></h5>
+                            <span class="news-date">10 April 2024</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a href="{{ route('berita') }}" class="btn-outline-maroon" style="padding: 8px 18px; font-size: 0.78rem; width: 100%; text-align: center; justify-content: center;">
+            <a href="{{ route('berita') }}" class="btn-card-action w-100 text-center">
                 LIHAT SEMUA BERITA <i class="bi bi-arrow-right"></i>
             </a>
         </div>
@@ -157,12 +202,12 @@
     <div class="stats-counter-grid">
         <div class="stat-box">
             <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
-            <div class="stat-number">{{ $totalMargaCount }}+</div>
+            <div class="stat-number">58+</div>
             <div class="stat-label">MARGA PARNA</div>
         </div>
 
         <div class="stat-box">
-            <div class="stat-icon"><i class="bi bi-house-heart-fill"></i></div>
+            <div class="stat-icon"><i class="bi bi-person-fill-gear"></i></div>
             <div class="stat-number">1000+</div>
             <div class="stat-label">KELUARGA TERGABUNG</div>
         </div>
@@ -174,10 +219,11 @@
         </div>
 
         <div class="stat-box">
-            <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
+            <div class="stat-icon"><i class="bi bi-handshake-fill"></i></div>
             <div class="stat-number">1</div>
             <div class="stat-label">IKATAN ADAT</div>
         </div>
     </div>
 </section>
 @endsection
+
