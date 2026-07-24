@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Core Custom Modular Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/variables.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('css/components.css') }}?v=2">
     
 
 
