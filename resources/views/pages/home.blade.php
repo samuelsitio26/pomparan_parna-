@@ -3,7 +3,7 @@
 @section('title', 'Beranda – PARNA Parsadaan Pomparan Ni Raja Nai Ambaton')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}?v=2">
 @endsection
 
 @section('content')
