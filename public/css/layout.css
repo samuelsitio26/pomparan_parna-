@@ -140,7 +140,7 @@
 /* SUBPAGE BANNER HERO */
 .subpage-banner {
     background: linear-gradient(135deg, rgba(74,21,21,0.95) 0%, rgba(45,10,10,0.92) 100%), 
-                url('/images/hero_toba.png') center/cover no-repeat;
+                url('../images/hero_toba.png') center/cover no-repeat;
     color: #FFFFFF;
     padding: 3rem 1.5rem;
     position: relative;
@@ -378,7 +378,9 @@
     color: #A09080;
 }
 
-/* RESPONSIVE DESIGN */
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
 @media (max-width: 1100px) {
     .grid-3-col {
         grid-template-columns: 1fr;
@@ -388,17 +390,117 @@
     }
     .footer-container {
         grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 }
 
-@media (max-width: 768px) {
+/* ================================================
+   TABLET (max 991px) – Hide desktop nav
+   ================================================ */
+@media (max-width: 991.98px) {
+    .nav-menu {
+        display: none;
+    }
+
     .header-container {
-        flex-direction: column;
+        padding: 0.7rem 1rem;
+        position: relative;
+    }
+
+    /* Hamburger button – shown on mobile/tablet */
+    .header-hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        color: #611818;
+        font-size: 1.6rem;
+        line-height: 1;
+        transition: color 0.2s;
+    }
+
+    .header-hamburger:hover {
+        color: #7A2121;
+    }
+}
+
+/* Desktop: hide hamburger */
+@media (min-width: 992px) {
+    .header-hamburger {
+        display: none;
+    }
+}
+
+/* ================================================
+   MOBILE (max 767px) – Full mobile layout
+   ================================================ */
+@media (max-width: 767.98px) {
+
+    /* Header */
+    .parna-header {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .brand-logo-img {
+        height: 38px;
+    }
+
+    .brand-text h1 {
+        font-size: 1.15rem;
+    }
+
+    .brand-text p {
+        font-size: 0.55rem;
+    }
+
+    /* Subpage Banner */
+    .subpage-banner {
+        padding: 2rem 1rem;
+    }
+
+    .subpage-banner h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Layout container */
+    .layout-container {
+        padding: 0 0.8rem;
+        margin: 1rem auto;
+    }
+
+    /* Grid columns – stack to 1 col */
+    .grid-2-col-equal {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+
+    /* Footer – single column on mobile */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .footer-col-brand {
+        padding-right: 0;
+    }
+
+    .footer-bio-text {
+        max-width: 100%;
+    }
+
+    .footer-quick-links {
+        gap: 2rem;
+    }
+
+    .parna-footer {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.72rem;
+        padding-top: 1rem;
     }
 }

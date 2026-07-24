@@ -225,5 +225,63 @@
         </div>
     </div>
 </section>
+
+<!-- Galeri Section (Mobile Visible) -->
+<section class="home-galeri-section">
+    <div class="home-section-header">
+        <h2>GALERI</h2>
+        <div class="section-gold-divider"></div>
+    </div>
+    <div class="home-galeri-carousel-wrapper">
+        <button class="galeri-nav galeri-prev" onclick="scrollGaleri(-1)" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
+        <div class="home-galeri-track" id="galeriTrack">
+            <div class="home-galeri-item">
+                <img src="{{ asset('images/galeri_1.png') }}" alt="Galeri Parna 1" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+            </div>
+            <div class="home-galeri-item">
+                <img src="{{ asset('images/galeri_2.png') }}" alt="Galeri Parna 2" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+            </div>
+            <div class="home-galeri-item">
+                <img src="{{ asset('images/galeri_3.png') }}" alt="Galeri Parna 3" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+            </div>
+            <div class="home-galeri-item">
+                <img src="{{ asset('images/hero_toba.png') }}" alt="Galeri Parna 4" onerror="this.src='{{ asset('images/hero_toba.png') }}';">
+            </div>
+        </div>
+        <button class="galeri-nav galeri-next" onclick="scrollGaleri(1)" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
+    </div>
+    <div class="home-section-footer">
+        <a href="{{ route('galeri') }}" class="btn-card-action">LIHAT GALERI <i class="bi bi-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- Kontak Kami Section (Mobile Visible) -->
+<section class="home-kontak-section">
+    <div class="home-section-header">
+        <h2>KONTAK KAMI</h2>
+        <div class="section-gold-divider"></div>
+    </div>
+    <ul class="home-kontak-list">
+        <li><i class="bi bi-telephone-fill"></i> +62 812-3456-7890</li>
+        <li><i class="bi bi-envelope-fill"></i> info@parna.or.id</li>
+        <li><i class="bi bi-geo-alt-fill"></i> Sumatera Utara, Indonesia</li>
+    </ul>
+    <div class="home-kontak-social">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+    </div>
+</section>
+
 @endsection
 
+@section('scripts')
+<script>
+function scrollGaleri(dir) {
+    const track = document.getElementById('galeriTrack');
+    const item = track.querySelector('.home-galeri-item');
+    const itemWidth = item ? item.offsetWidth + 12 : 200;
+    track.scrollBy({ left: dir * itemWidth, behavior: 'smooth' });
+}
+</script>
+@endsection

@@ -56,4 +56,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+        <p>&copy; {{ date('Y') }} Parsadaan Pomparan Ni Raja Nai Ambaton (Parna). All rights reserved.</p>
+    </div>
 </footer>

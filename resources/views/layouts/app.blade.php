@@ -17,53 +17,7 @@
     <!-- Core Custom Modular Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     
-    <style>
-        /* Mobile Senior Quick Bottom Nav */
-        .mobile-bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #FFFFFF;
-            border-top: 2px solid var(--parna-gold);
-            z-index: 1040;
-            box-shadow: 0 -3px 12px rgba(0,0,0,0.12);
-        }
-        
-        .mobile-bottom-nav .nav-item {
-            flex: 1;
-            text-align: center;
-        }
 
-        .mobile-bottom-nav .nav-link-mobile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 8px 4px;
-            color: #555555;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .mobile-bottom-nav .nav-link-mobile i {
-            font-size: 1.4rem;
-            margin-bottom: 2px;
-            color: var(--parna-maroon);
-        }
-
-        .mobile-bottom-nav .nav-link-mobile.active,
-        .mobile-bottom-nav .nav-link-mobile:hover {
-            color: var(--parna-maroon);
-            background-color: #FAF3E6;
-        }
-        
-        @media (max-width: 767.98px) {
-            main {
-                padding-bottom: 60px;
-            }
-        }
-    </style>
 
     @yield('styles')
 </head>
@@ -77,39 +31,6 @@
         @yield('content')
     </main>
 
-    <!-- Senior Mobile Bottom Quick Navigation -->
-    <div class="mobile-bottom-nav d-flex d-md-none">
-        <div class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link-mobile {{ request()->routeIs('home') ? 'active' : '' }}">
-                <i class="bi bi-house-door-fill"></i>
-                <span>Beranda</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="{{ route('tarombo') }}" class="nav-link-mobile {{ request()->routeIs('tarombo') ? 'active' : '' }}">
-                <i class="bi bi-diagram-3-fill"></i>
-                <span>Tarombo</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="{{ route('marga') }}" class="nav-link-mobile {{ request()->routeIs('marga') ? 'active' : '' }}">
-                <i class="bi bi-card-checklist"></i>
-                <span>Marga</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="{{ route('berita') }}" class="nav-link-mobile {{ request()->routeIs('berita') ? 'active' : '' }}">
-                <i class="bi bi-newspaper"></i>
-                <span>Berita</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="{{ route('tentang') }}" class="nav-link-mobile {{ request()->routeIs('tentang') ? 'active' : '' }}">
-                <i class="bi bi-info-circle-fill"></i>
-                <span>Tentang</span>
-            </a>
-        </div>
-    </div>
 
     <!-- Footer -->
     @include('partials.footer')

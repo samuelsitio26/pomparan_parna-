@@ -1,12 +1,14 @@
 /* ==========================================================================
-   HOME PAGE STYLES - PIXEL PERFECT MATCH TO TARGET IMAGE 2 (COMPACT VIEW)
+   HOME PAGE STYLES – FULLY RESPONSIVE (Desktop + Mobile)
    ========================================================================== */
 
 body {
     background-color: #FAF5EE;
 }
 
-/* HERO SECTION WITH LEFT GORGA STRIP */
+/* ================================================
+   HERO SECTION WITH LEFT GORGA STRIP
+   ================================================ */
 .home-hero-wrapper {
     display: flex;
     position: relative;
@@ -40,8 +42,8 @@ body {
 
 .home-hero-main {
     flex: 1;
-    background: linear-gradient(90deg, #FBF8F3 0%, #FAF4EB 42%, rgba(250,244,235,0.15) 75%),
-                url('/images/hero_toba.png') right center / cover no-repeat;
+    background: linear-gradient(90deg, #FBF8F3 0%, #FAF4EB 42%, rgba(250, 244, 235, 0.15) 75%),
+        url('../../images/hero_toba.png') right center / cover no-repeat;
     padding: 2.2rem 3rem;
     display: flex;
     align-items: center;
@@ -92,6 +94,7 @@ body {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.2rem;
+    flex-wrap: wrap;
 }
 
 .btn-hero-primary {
@@ -156,7 +159,9 @@ body {
     height: 10px;
 }
 
-/* FLOATING HIGHLIGHTS BAR */
+/* ================================================
+   FLOATING HIGHLIGHTS BAR
+   ================================================ */
 .highlights-bar {
     max-width: 1320px;
     margin: -2.2rem auto 1.5rem auto;
@@ -216,7 +221,9 @@ body {
     margin: 0;
 }
 
-/* MAIN FEATURED CARDS GRID */
+/* ================================================
+   MAIN FEATURED CARDS GRID
+   ================================================ */
 .home-featured-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.3fr 1.2fr;
@@ -232,7 +239,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
     transition: all 0.25s ease;
 }
 
@@ -339,12 +346,12 @@ body {
 }
 
 .news-thumb {
-    width: 50px;
-    height: 40px;
+    width: 60px;
+    height: 48px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 6px;
     flex-shrink: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .news-info h5 {
@@ -369,7 +376,9 @@ body {
     color: #928476;
 }
 
-/* STATS COUNTER BAR */
+/* ================================================
+   STATS COUNTER BAR
+   ================================================ */
 .stats-counter-bar {
     background: linear-gradient(135deg, #4A0E0E 0%, #611818 100%);
     color: #FFFFFF;
@@ -416,38 +425,441 @@ body {
     text-transform: uppercase;
 }
 
-/* RESPONSIVE DESIGN */
+/* ================================================
+   HOME SECTION SHARED STYLES (Galeri & Kontak)
+   ================================================ */
+.home-galeri-section,
+.home-kontak-section {
+    background: #FFFFFF;
+    padding: 1.8rem 1.5rem;
+    border-top: 1px solid #EAE1D7;
+}
+
+.home-section-header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.home-section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #611818;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.section-gold-divider {
+    height: 3px;
+    width: 50px;
+    background: linear-gradient(90deg, #611818 0%, #C59B27 100%);
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.home-section-footer {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+/* ================================================
+   GALLERY CAROUSEL
+   ================================================ */
+.home-galeri-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.home-galeri-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 6px 0;
+}
+
+.home-galeri-track::-webkit-scrollbar {
+    display: none;
+}
+
+.home-galeri-item {
+    flex: 0 0 calc(33.333% - 8px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/3;
+    background: #EAE1D7;
+}
+
+.home-galeri-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.home-galeri-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeri-nav {
+    background: #611818;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(97, 24, 24, 0.25);
+    transition: all 0.2s ease;
+}
+
+.galeri-nav:hover {
+    background: #7A2121;
+    transform: scale(1.08);
+}
+
+/* ================================================
+   KONTAK KAMI SECTION
+   ================================================ */
+.home-kontak-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-kontak-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: #332724;
+    font-weight: 500;
+}
+
+.home-kontak-list li i {
+    font-size: 1.1rem;
+    color: #611818;
+    width: 24px;
+    text-align: center;
+}
+
+.home-kontak-social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 1rem;
+}
+
+.home-kontak-social a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #611818;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(97, 24, 24, 0.2);
+}
+
+.home-kontak-social a:hover {
+    background: #7A2121;
+    transform: translateY(-2px);
+}
+
+/* ================================================
+   DESKTOP: Hide Mobile-only sections by default
+   ================================================ */
+.home-galeri-section,
+.home-kontak-section {
+    display: none;
+}
+
+/* ================================================
+   RESPONSIVE – Tablet (max 1200px)
+   ================================================ */
 @media (max-width: 1200px) {
     .home-featured-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .highlights-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .highlight-item:nth-child(3) {
+        border-right: none;
+    }
 }
 
-@media (max-width: 768px) {
+/* ================================================
+   RESPONSIVE – Mobile (max 767px)
+   ================================================ */
+@media (max-width: 767.98px) {
+
+    /* --- HERO --- */
     .home-hero-wrapper {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
+        min-height: 420px;
     }
+
+    /* Gorga strip tetap vertikal di kiri seperti desain referensi */
     .hero-gorga-strip {
-        width: 100%;
-        height: 15px;
+        width: 52px;
+        height: auto;
+        flex-shrink: 0;
+        align-self: stretch;
     }
+
     .home-hero-main {
-        padding: 2rem 1.2rem;
+        flex: 1;
+        padding: 1.8rem 1.2rem 2.2rem 1.2rem;
+        background: linear-gradient(105deg, #FBF8F3 0%, #F5EAD8 38%, rgba(245, 234, 216, 0.05) 60%),
+            url('../../images/hero_mobile.png') right center / auto 100% no-repeat;
+        align-items: flex-start;
     }
+
+    .home-hero-content {
+        max-width: 100%;
+    }
+
+    .script-sub {
+        font-size: 1.4rem;
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.4rem;
+        letter-spacing: 1px;
     }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .hero-desc {
+        font-size: 0.82rem;
+        margin-bottom: 1.2rem;
+        max-width: 75%;
+    }
+
+    /* Tombol berjajar vertikal seperti referensi */
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-outline {
+        font-size: 0.75rem;
+        padding: 10px 20px;
+        width: auto;
+    }
+
+    /* --- HIGHLIGHTS --- */
+    .highlights-bar {
+        margin: 0.5rem auto 0 auto;
+        padding: 0 1rem;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+    }
+
+    .highlight-item {
+        border-right: none;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid #F0E6DC;
+    }
+
+    .highlight-item:nth-child(odd) {
+        border-right: 1px solid #F0E6DC;
+    }
+
+    .highlight-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    .highlight-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .highlight-text h5 {
+        font-size: 0.78rem;
+    }
+
+    .highlight-text p {
+        font-size: 0.65rem;
+    }
+
+    /* --- FEATURED CARDS --- */
+    .layout-container {
+        padding: 0 0.8rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .home-featured-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .featured-card {
+        padding: 1.1rem 1.2rem;
+        border-radius: 10px;
+    }
+
+    .featured-card-body h3 {
+        font-size: 0.95rem;
+    }
+
+    .featured-card-body p {
+        font-size: 0.8rem;
+    }
+
+    /* Hide tree image on mobile for cleaner look */
+    .tree-vector-wrapper {
+        display: none;
+    }
+
+    .tarombo-card-content {
+        display: block;
+    }
+
+    /* --- STATS BAR --- */
+    .stats-counter-bar {
+        padding: 1.5rem 1rem;
+    }
+
+    .stats-counter-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    .stat-number {
+        font-size: 1.7rem;
+    }
+
+    .stat-icon {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.68rem;
+    }
+
+    /* --- SHOW MOBILE SECTIONS --- */
+    .home-galeri-section,
+    .home-kontak-section {
+        display: block;
+        padding: 1.5rem 1rem;
+    }
+
+    .home-section-header h2 {
+        font-size: 1.1rem;
+    }
+
+    /* --- GALERI --- */
+    .home-galeri-item {
+        flex: 0 0 calc(50% - 6px);
+    }
+
+    .galeri-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    /* --- KONTAK --- */
+    .home-kontak-list {
+        margin-bottom: 0.8rem;
+    }
+
+    .home-kontak-list li {
+        font-size: 0.88rem;
+    }
+
+    .home-kontak-social a {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
+/* ================================================
+   RESPONSIVE – Small Mobile (max 480px)
+   ================================================ */
+@media (max-width: 480px) {
+    .hero-gorga-strip {
+        width: 42px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .script-sub {
+        font-size: 1.2rem;
+    }
+
+    /* Tombol tetap vertikal tapi tidak full-width */
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-outline {
+        width: auto;
+        min-width: 180px;
+    }
+
     .highlights-grid {
         grid-template-columns: 1fr;
     }
-    .home-featured-grid {
-        grid-template-columns: 1fr;
+
+    .highlight-item {
+        border-right: none !important;
     }
-    .stats-counter-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    .highlight-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #F0E6DC;
+    }
+
+    .highlight-item:last-child {
+        border-bottom: none;
+    }
+
+    .home-galeri-item {
+        flex: 0 0 80%;
     }
 }
